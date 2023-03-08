@@ -1,0 +1,187 @@
+"Games"
+{
+	"cstrike"
+	{
+		"Signatures"
+		{
+			"SendProxy_CropFlagsToPlayerFlagBitsLength"
+			{
+				"library"	"server"
+				"windows"	"\x8B\x44\x24\x0C\x8B\x08\x8B\x54\x24\x10\x81\xE1\xFF\x01\x00\x00"
+				"linux"		"@_Z41SendProxy_CropFlagsToPlayerFlagBitsLengthPK8SendPropPKvS3_P8DVariantii"
+			}
+
+			"ServerClassInit<DT_BasePlayer>"
+			{
+				"library"	"server"
+				"windows"	"\xF6\x05\x2A\x2A\x2A\x2A\x01\x0F\x85\x2A\x2A\x2A\x2A\x83\x0D\x2A\x2A\x2A\x2A\x01\x6A\x00\x6A\x00\x6A\xFF\x6A\x04\x6A\x00\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\xA1\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x50\x6A\x00\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x24\x09\x00\x00"
+				"linux"		"@_Z15ServerClassInitIN13DT_BasePlayer7ignoredEEiPT_"
+			}
+
+			"ServerClassInit<DT_LocalPlayerExclusive>"
+			{
+				"library"	"server"
+				"windows"	"\xF6\x05\x2A\x2A\x2A\x2A\x2A\x0F\x85\x2A\x2A\x2A\x2A\x83\x0D\x2A\x2A\x2A\x2A\x2A\x6A\x2A\x6A\x2A\x6A\xFF\x6A\x04\x6A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\xE8\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A\x68\x2A\x2A\x2A\x2A"
+				"linux"		"@_Z15ServerClassInitIN23DT_LocalPlayerExclusive7ignoredEEiPT_"
+			}
+
+			"SendTable_GetCRC"
+			{
+				"library"	"engine"
+				"windows"	"\xE8\x2A\x2A\x2A\x2A\x8B\x8E\x2A\x2A\x2A\x2A\x89\x44\x24\x14"
+				"linux"		"@_Z16SendTable_GetCRCv"
+			}
+		}
+
+		"Addresses"
+		{
+			"PLAYER_FLAG_BITS"
+			{
+				"windows"
+				{
+					"signature"		"SendProxy_CropFlagsToPlayerFlagBitsLength"
+					"offset"		"12"
+				}
+				
+				"linux"
+				{
+					"signature"		"SendProxy_CropFlagsToPlayerFlagBitsLength"
+					"offset"		"12"
+				}
+			}
+
+			"m_vecBaseVelocity"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"627"
+				}
+
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"1314"
+				}
+			}
+
+			"m_vecVelocity[0]"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"495"
+				}
+
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"1061"
+				}
+			}
+
+			"m_vecVelocity[1]"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"539"
+				}
+
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"1143"
+				}
+			}
+
+			"m_vecVelocity[2]"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"586"
+				}
+
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_LocalPlayerExclusive>"
+					"offset"		"1225"
+				}
+			}
+
+			"m_fFlags"
+			{
+				"windows"
+				{
+					"signature"		"ServerClassInit<DT_BasePlayer>"
+					"offset"		"289"
+				}
+
+				"linux"
+				{
+					"signature"		"ServerClassInit<DT_BasePlayer>"
+					"offset"		"618"
+				}
+			}
+
+			"g_SendTableCRC"
+			{
+				"windows"
+				{
+					"signature"		"SendTable_GetCRC"			
+				}
+
+				"linux"
+				{
+					"signature"		"SendTable_GetCRC"
+				}
+			}
+		}
+
+		"Offsets"
+		{
+			"m_nBits"
+			{
+				"windows"	"12"
+				"linux"		"12"
+			}
+
+			"m_fLowValue"
+			{
+				"windows"	"16"
+				"linux"		"16"
+			}
+
+			"m_fHighValue"
+			{
+				"windows"	"20"
+				"linux"		"20"
+			}
+
+			"m_fHighLowMul"
+			{
+				"windows"	"48"
+				"linux"		"48"
+			}
+
+			"m_Flags"
+			{
+				"windows"	"52"
+				"linux"		"52"
+			}
+
+			"g_SendTableCRCOffset_1"
+			{
+				"windows"		"4"
+				"linux"			"0"
+			}
+
+			"g_SendTableCRCOffset_2"
+			{
+				"windows"		"1"
+				"linux"			"1"
+			}
+		}
+	}
+}
